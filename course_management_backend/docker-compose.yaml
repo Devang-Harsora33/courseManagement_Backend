@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  backend:
+    image: devangharsora/coursemanagement:course_management_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mongodb+srv://devangkh1206:admin123@coursesmanagement.v5dfb.mongodb.net/
+    depends_on:
+      - mongo
+
+  frontend:
+    image: devangharsora/coursemanagement:course_management_client
+    ports:
+      - "3000:3000"
+
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
