@@ -7,7 +7,8 @@ class Course:
         self.description = description
 
 class CourseInstance:
-    def __init__(self, year, semester, course_id):
+    def __init__(self, year, semester, course_title,course_id):
         self.year = year
         self.semester = semester
+        self.course_title = course_title
         self.course_id = course_id
